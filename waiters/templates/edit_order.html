@@ -10,6 +10,14 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s018.radikal.ru/i513/1706/7f/89451f3c8c16.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
 
 </head>
@@ -35,10 +43,11 @@
             </div>
     </nav>
     <br><br>
+        <br><br><br><br>
     <p>
         Внести изменения:
     </p>
-    <form action="'http://127.0.0.1:8000/manager/clist/{{profile.id}}/edit" method="post">
+    <form action="http://127.0.0.1:8000/waiter/orders/{{order.id}}/edit" method="post">
         {%csrf_token%}
         {{form.as_p}}
         <button type="submit" class="btn btn-success">Сохранить изменения</button>

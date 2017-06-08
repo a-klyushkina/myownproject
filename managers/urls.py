@@ -7,7 +7,7 @@ urlpatterns = [
     # url(r'^create/$', create_page, name='create'),
     # url(r'^register/$', register, name='register'),
     # url(r'^login/$', login, {'template_name': 'm_login.html'}, name='login'),
-    url(r'^logout/$', logout_view , name='logout'),
+    url(r'^logout/$', logout_view, name='logout'),
 
     url(r'^clist/$', cprofiles, name='list of cooks'), #список поваров
     url(r'^clist/(?P<profile_id>\d+)/$', cprofile, name='cook'), #профиль повара с id

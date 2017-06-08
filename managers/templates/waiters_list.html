@@ -9,8 +9,15 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s019.radikal.ru/i606/1706/3d/a7afca832512.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
-
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,16 +43,16 @@
         </nav>
     <div>
         <br><br>
-        <h1><a>Список официантов</a></h1>
     </div>
-    <p><a href="http://127.0.0.1:8000/manager/wlist/new_waiter">Добавить</a></p>
-    <ul>
+
+    <br><br><br><br><br><br>
+    <ul><p><a href="http://127.0.0.1:8000/manager/wlist/new_waiter"> Добавить</a></p>
         {% for profile in profiles %}
         <p>
-            {{profile.id}}
+            <font color="grey" size="+2">{{profile.id}}</font>
             <a href="http://127.0.0.1:8000/manager/wlist/{{profile.id}}">
-            {{profile}}
-            {{profile.last_name}}</a></p>
+            <font color="white" size="+2">{{profile}}</font>
+            <font color="white" size="+2">{{profile.last_name}}</font></a></p>
         {%empty%}
             NO YET
         {% endfor %}

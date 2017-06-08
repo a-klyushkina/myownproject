@@ -9,6 +9,14 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s018.radikal.ru/i508/1706/0c/08b641324d5d.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
 
 </head>
@@ -39,9 +47,8 @@
     </div>
     <ul>
         {% for order in orders %}
-            {{order.id}}
-            {{order.text}}
-            <button class="btn btn-warning">Выполнить заказ</button>
+            <p><a href="http://127.0.0.1:8000/cook/orders/{{order.id}}">{{order.id}}
+                {{order.text}}</a></p>
         {%empty%}
             NO YET
         {% endfor %}

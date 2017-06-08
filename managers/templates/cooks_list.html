@@ -9,8 +9,15 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s16.radikal.ru/i190/1706/62/f32c00bd0fc2.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
-
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,16 +43,17 @@
         </nav>
     <div>
         <br><br>
-        <h1><a>Список поваров</a></h1>
+        <h1><a><font color="white" size="+2">Список поваров</font></a></h1>
     </div>
-    <p><a href="http://127.0.0.1:8000/manager/clist/new_cook">Добавить</a></p>
+    <p><a href="http://127.0.0.1:8000/manager/clist/new_cook"><font color="white" size="+1">Добавить</font></a></p>
     <ul>
         {% for profile in profiles %}
         <p>
-            {{profile.id}}
+            <font color="white" size="+2"><font color="grey" size="+2">{{profile.id}}</font>
             <a href="http://127.0.0.1:8000/manager/clist/{{profile.id}}">
-            {{profile}}
-            {{profile.last_name}}</a></p>
+            <font color="white" size="+2">{{profile}}</font>
+             <font color="white" size="+2">{{profile.last_name}}</font></a>
+        </p>
         {%empty%}
             NO YET
         {% endfor %}

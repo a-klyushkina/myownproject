@@ -11,8 +11,15 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s009.radikal.ru/i308/1706/c6/399322e7adda.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
-
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -38,11 +45,11 @@
         </nav>
     <br><br><br><br>
     <p>
-        Введите данные:
+        <font size="+2" color="white">Введите данные:</font>
     </p>
     <form action="http://127.0.0.1:8000/manager/new_cook" method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        <font size="+2" color="white">{{form.as_p}}</font>
         <button name="'submit">Добавить</button>
     </form>
 </body>

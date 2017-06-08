@@ -11,8 +11,15 @@
 <!-- Latest compiled and minified JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
+    body {
+    background-image: url('http://s019.radikal.ru/i627/1706/8f/2d9204330bbf.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #FFFFFF;
+    }
 </style>
-
 </head>
 <body>
     <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -36,14 +43,15 @@
                 </div>
             </div>
         </nav>
+    <br><br><br><br><br><br><br><br><br><br><br><br>
     <p><a href="http://127.0.0.1:8000/manager/clist/{{profile.id}}/edit">Редактировать</a></p>
     <p>
-        {{profile}} {{profile.last_name}}
+       <font size="+2"> {{profile}} {{profile.last_name}}</font>
     </p>
-    <p>Возраст:{{profile.age}}</p>
-    <p>Дата рождения:{{profile.birth}}</p>
-    <p>Начало работы:{{profile.since}}</p>
-    <p>Адрес:{{profile.adress}}</p>
-    <p>Телефон:{{profile.phone}}</p>
+    <p><font size="+2">Возраст:{{profile.age}}</font></p>
+    <p><font size="+2">Дата рождения:{{profile.birth}}</font></p>
+    <p><font size="+2">Начало работы:{{profile.since}}</font></p>
+    <p><font size="+2">Адрес:{{profile.adress}}</font></p>
+    <p><font size="+2">Телефон:{{profile.phone}}</font></p>
 </body>
 </html>

@@ -11,7 +11,7 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <style>
     body {
-    background-image: url('http://s019.radikal.ru/i624/1706/dc/1813232115da.jpg');
+    background-image: url('http://s018.radikal.ru/i524/1706/0f/5687fcf35c9f.jpg');
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -29,7 +29,7 @@
             <a class="close" href="#" data-dismiss="alert">x</a>Неверные данные.Попробуйте снова
         </div>
         {% endif %}
-    <form method="post" action="http://127.0.0.1:8000/">
+    <form class="form-inline" method="post" action="http://127.0.0.1:8000/">
 	{% csrf_token %}
 	{{form.as_p}}
 	<button type="submit">Login</button>

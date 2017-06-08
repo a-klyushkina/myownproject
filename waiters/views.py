@@ -1,7 +1,8 @@
 from django.shortcuts import render, render_to_response
 from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.contrib.auth import logout
+from django.contrib.auth.views import logout
+from django.contrib.auth.models import User
 from .forms import CreateOrderForm
 from .models import waiterprofile, Order
 from django.contrib import auth
@@ -13,15 +14,24 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def waiter_abilities(request):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
     return render(request, 'abilities.html', {})
 
 @login_required
 def logout_view(request):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
     logout(request)
     return HttpResponseRedirect('http://127.0.0.1:8000')
 
 @login_required
 def createorder(request):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
     # queryset = waiterprofile.objects.filter(id=self.request.id)
     if request.method != 'POST':
         form = CreateOrderForm()
@@ -36,10 +46,39 @@ def createorder(request):
 
 @login_required
 def orders_view(request):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
     # permission_classes = (IsAuthenticated,)
     orders = Order.objects.filter(waiter_id=request.user)
     context = {'orders': orders}
     return render(request, 'w_orders.html', context)
+
+@login_required
+def order_view(request, order_id):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
+    order = Order.objects.get(id=order_id)
+    context = {'order': order}
+    return render(request, 'order.html', context)
+
+@login_required
+def edit_order(request, order_id):
+    def get_queryset(self):
+        queryset = User.objects.filter(profession='w')
+        return queryset
+    order = Order.objects.get(id=order_id)
+    if request.method != 'POST':
+        form = CreateOrderForm(instance=order)
+    else:
+        form = form = CreateOrderForm(instance=order, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('http://127.0.0.1:8000/manager/wlist/{order_id}'.format(order_id=order_id))
+
+    context = {'Order': order, 'form': form}
+    return render(request, 'edit_order.html', context)
 
 # def login(request):
 #     #print('WE ARE HERE')
