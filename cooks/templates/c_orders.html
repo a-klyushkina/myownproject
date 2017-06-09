@@ -47,8 +47,8 @@
     </div>
     <ul>
         {% for order in orders %}
-            <p><a href="http://127.0.0.1:8000/cook/orders/{{order.id}}">{{order.id}}
-                {{order.text}}</a></p>
+            <p>{{order.id}}
+                {{order.text}}</p>
         {%empty%}
             NO YET
         {% endfor %}

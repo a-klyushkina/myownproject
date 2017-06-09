@@ -7,6 +7,7 @@ from .forms import LoginForm, RegisterForm
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.models import User
 def welcome(request):
     return render(request, 'welcome.html', {'form': LoginForm()})
 # def user_login(request):
@@ -72,6 +73,9 @@ def register(request):
         form = RegisterForm(data=request.POST)
         if form.is_valid():
             new_user = form.save()
+            # authenticated_user = authenticate(username=new_user.username, password=request.POST['password'])
+            # login(request, authenticated_user)
+            # profession = User.objects.get(id=authenticated_user)
             return HttpResponseRedirect('http://127.0.0.1:8000/')
 
     context = {'form': form}
